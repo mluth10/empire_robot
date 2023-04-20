@@ -17,6 +17,7 @@ except ServoTimeoutError as e:
 initial_angles = [125, 115, 115, 110, 115, 115, 120, 120]
 
 # weird back feet dance
+print('first back feet dance')
 angle_out = 30
 motors[3].move(115-angle_out, time=1000)
 motors[5].move(115+angle_out, time=1000)
