@@ -22,33 +22,14 @@ except ServoTimeoutError as e:
 t = 0
 print("starting loop")
 while True:
-    # #90 - 140, start at 120
-    # hip_joint = 25 * sin(t - 3.34295) + 115
-    # #170 - 70, start at 120
-    # knee_joint = 50 * sin(t) + 120
-
-    # #want same dir?
-    # hip_joint_2 = -25 * sin(t - 2.94) + 115
-    # knee_joint_2 = -50 * sin(t) + 120
-
     waves = {}
-    waves[1] = 25 * sin(t) + 115
-    waves[2] = 50 * sin(t) + 120
-    waves[3] = -25 * sin(t) + 115
-    waves[4] = -50 * sin(t) + 120
-    # waves[7] = 25 * sin(t - 3.34295) + 115
-    # waves[8] = 50 * sin(t) + 120
-    # waves[5] = -25 * sin(t - 2.94) + 115
-    # waves[6] = -50 * sin(t) + 120
+    #waves[3] = 30 * sin(t) + 85
+    waves[4] = 40 * sin(t) + 110
+    #waves[5] = -30 * sin(t) + 145
+    waves[6] = -40 * sin(t) + 115
 
     for i in waves:
         motors[i].move(waves[i])
-
-    # servo1.move(hip_joint)
-    # servo2.move(knee_joint)
-    # servo3.move(hip_joint_2)
-    # servo4.move(knee_joint_2)
-
-    time.sleep(0.05)
-    t += 0.1
-
+    
+    time.sleep(0.02)
+    t += 0.2

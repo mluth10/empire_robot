@@ -12,7 +12,6 @@ try:
         motors[i] = LX16A(i)
         motors[i].set_angle_limits(0,240)
         print(motors[i].get_commanded_angle()) # query positions
-
         motors[i].move(angle=initial_angles[i-1], time=1000) #move to start positions
         
         # if motors[i].get_temp() > 50 or motors[i].get_temp() < 10:
